@@ -49,11 +49,13 @@ if (Meteor.isClient) {
   })
 
   const routes = (
-    <Route history={ReactRouter.HistoryLocation} component={AppBody} path="/">
-      <IndexRoute component={Home}></IndexRoute>
-      <Route path="other" component={Other} />
-      <Route path="settings" component={Settings} />
-    </Route>
+    <Router history={ReactRouter.HistoryLocation}>
+      <Route component={AppBody} path="/">
+        <IndexRoute component={Home}></IndexRoute>
+        <Route path="other" component={Other} />
+        <Route path="settings" component={Settings} />
+      </Route>
+    </Router>
   )
 
   Meteor.startup(function () {
