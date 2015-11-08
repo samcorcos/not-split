@@ -48,8 +48,9 @@ if (Meteor.isClient) {
     }
   })
 
+  console.log(ReactRouter);
   const routes = (
-    <Router history={ReactRouter.HistoryLocation}>
+    <Router history={ReactRouter.history.createHistory()}>
       <Route component={AppBody} path="/">
         <IndexRoute component={Home}></IndexRoute>
         <Route path="other" component={Other} />
@@ -61,7 +62,7 @@ if (Meteor.isClient) {
   Meteor.startup(function () {
     ReactDOM.render(
       routes,
-      document.body
+      document.getElementById('app')
     )
   });
 }
