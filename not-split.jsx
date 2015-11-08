@@ -48,7 +48,6 @@ if (Meteor.isClient) {
     }
   })
 
-  console.log(ReactRouter);
   const routes = (
     <Router history={ReactRouter.history.createHistory()}>
       <Route component={AppBody} path="/">
